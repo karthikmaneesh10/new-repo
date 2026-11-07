@@ -23,7 +23,7 @@ import {
 } from 'lucide-react';
 import './App.css';
 
-const API_BASE = 'http://127.0.0.1:8000';
+const API_BASE = import.meta.env.VITE_API_BASE_URL || (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') ? 'http://127.0.0.1:8000' : '');
 
 const GENRES = ['All', 'Fiction', 'Classic', 'Sci-Fi', 'Technology', 'Self-Help', 'Fantasy', 'Mystery'];
 
